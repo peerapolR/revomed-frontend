@@ -1,4 +1,7 @@
 import Image from "next/image";
+import { Layout } from "antd";
+import Sider from "antd/es/layout/Sider";
+import { Content, Header } from "antd/es/layout/layout";
 
 const Home = () => {
   return (

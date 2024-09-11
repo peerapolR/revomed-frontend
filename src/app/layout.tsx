@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import ContextProvider from "@contexts/UserAuthContext";
+import { Layout } from "antd";
+import Sider from "antd/es/layout/Sider";
+import { Header, Content } from "antd/es/layout/layout";
+import SideBar from "@components/SideBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,8 +21,19 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="en">
-      <body className={inter.className} style={{ fontFamily: "LINESeedSans" }}>
-        <ContextProvider>{children}</ContextProvider>
+      <body
+        className={inter.className}
+        style={{ fontFamily: "LINESeedSans", minHeight: "100vh" }}
+      >
+        <ContextProvider>
+          <Layout style={{ minHeight : '100vh'}}>
+            <SideBar />
+            <Layout>
+              <Header>Header1234</Header>
+              <Content>{children}</Content>
+            </Layout>
+          </Layout>
+        </ContextProvider>
       </body>
     </html>
   );

@@ -67,6 +67,9 @@
 
 body {
   font-family: "LINESeedSans", sans-sarif;
+  min-height: 100vh;
+  box-sizing: border-box;
+  /* margin: 0; */
 }
 
 @layer utilities {

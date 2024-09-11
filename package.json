@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 5000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@nextui-org/react": "^2.4.2",
+    "antd": "^5.20.5",
     "axios": "^1.7.2",
     "framer-motion": "^11.2.12",
     "next": "14.2.4",
