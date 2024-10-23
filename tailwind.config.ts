@@ -6,6 +6,7 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/modules/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
     "./node_modules/@nextui-org/theme/dist/components/button.js",
     "./node_modules/@nextui-org/theme/dist/components/(button|snippet|code|input).js",
@@ -23,6 +24,7 @@ const config: Config = {
         "revomed-primary-light1": "#64A3CB",
         "revomed-primary-light2": "#CDECFF",
         "revomed-primary-light3": "#EDF6FF",
+        "revomed-primary-blue": "#006EB3",
 
         "revomed-secondary": "#DC818D",
         "revomed-secondary-dark": "#BA5865",

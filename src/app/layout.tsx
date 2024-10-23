@@ -6,6 +6,9 @@ import { Layout } from "antd";
 import Sider from "antd/es/layout/Sider";
 import { Header, Content } from "antd/es/layout/layout";
 import SideBar from "@components/SideBar";
+import PathProvider from "@contexts/PathContext";
+import HeaderBar from "@components/HeaderBar";
+import AntdConfigProvider from "../provider/AntdConfigProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,13 +29,17 @@ const RootLayout = ({
         style={{ fontFamily: "LINESeedSans", minHeight: "100vh" }}
       >
         <ContextProvider>
-          <Layout style={{ minHeight : '100vh'}}>
-            <SideBar />
-            <Layout>
-              <Header>Header1234</Header>
-              <Content>{children}</Content>
-            </Layout>
-          </Layout>
+          <AntdConfigProvider>
+            <PathProvider>
+              <Layout style={{ minHeight: "100vh" }}>
+                <SideBar />
+                <Layout>
+                  <HeaderBar />
+                  <Content>{children}</Content>
+                </Layout>
+              </Layout>
+            </PathProvider>
+          </AntdConfigProvider>
         </ContextProvider>
       </body>
     </html>

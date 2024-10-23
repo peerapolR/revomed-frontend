@@ -1,18 +1,15 @@
 import React, { useState } from "react";
-import {
-  AppstoreOutlined,
-  MailOutlined,
-  SettingOutlined,
-} from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Menu } from "antd";
 import IconLogout from "@icons/IconLogout";
 import DotIcon from "@icons/DotIcon";
-import { MenuItemType } from "antd/es/menu/interface";
 import { useRouter } from "next/navigation";
-
-// if type === subMenu
-// add dot icon
+import PlusIcon from "@icons/PlusIcon";
+import ListIcon from "@icons/ListIcon";
+import GroupIcon from "@icons/GroupIcon";
+import FileExportIcon from "@icons/FileExportIcon";
+import { usePath } from "@contexts/PathContext";
+import type { MenuInfo } from "rc-menu/lib/interface";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
@@ -21,88 +18,105 @@ interface LevelKeysProps {
   children?: LevelKeysProps[];
 }
 
-const getLevelKeys = (items1: LevelKeysProps[]) => {
-  const key: Record<string, number> = {};
-  const func = (items2: LevelKeysProps[], level = 1) => {
-    items2.forEach((item) => {
-      if (item.key) {
-        key[item.key] = level;
-      }
-      if (item.children) {
-        func(item.children, level + 1);
-      }
-    });
-  };
-  func(items1);
-  return key;
-};
-
 export default function MenuBar() {
+  const { setHeader } = usePath();
   const router = useRouter();
   const [stateOpenKeys, setStateOpenKeys] = useState<string[]>([]);
 
   const onOpenChange: MenuProps["onOpenChange"] = (openKeys) => {
     console.log(openKeys);
-    // const currentOpenKey = openKeys.find(
-    //   (key) => stateOpenKeys.indexOf(key) === -1
-    // );
-    // console.log(currentOpenKey)
-    // open
-    // if (currentOpenKey !== undefined) {
-    //   const repeatIndex = openKeys
-    //     .filter((key) => key !== currentOpenKey)
-    //     .findIndex((key) => levelKeys[key] === levelKeys[currentOpenKey]);
+    const currentOpenKey = openKeys.find(
+      (key) => stateOpenKeys.indexOf(key) === -1
+    );
+    console.log(currentOpenKey);
+    open;
+    if (currentOpenKey !== undefined) {
+      const repeatIndex = openKeys
+        .filter((key) => key !== currentOpenKey)
+        .findIndex((key) => levelKeys[key] === levelKeys[currentOpenKey]);
 
-    //   setStateOpenKeys(
-    //     openKeys
-    //       // remove repeat key
-    //       .filter((_, index) => index !== repeatIndex)
-    //       // remove current level all child
-    //       .filter((key) => levelKeys[key] <= levelKeys[currentOpenKey])
-    //   );
-    // } else {
-    //   // close
-    //   setStateOpenKeys(openKeys);
-    // }
+      setStateOpenKeys(
+        openKeys
+          // remove repeat key
+          .filter((_, index) => index !== repeatIndex)
+          // remove current level all child
+          .filter((key) => levelKeys[key] <= levelKeys[currentOpenKey])
+      );
+    } else {
+      // close
+      setStateOpenKeys(openKeys);
+    }
     setStateOpenKeys(openKeys);
   };
 
-  const handlePath = (key : string) : void => {
-    setStateOpenKeys([key])
-    router.push(key)
-  }
+  const getLevelKeys = (items1: LevelKeysProps[]) => {
+    const key: Record<string, number> = {};
+    const func = (items2: LevelKeysProps[], level = 1) => {
+      items2.forEach((item) => {
+        if (item.key) {
+          key[item.key] = level;
+        }
+        if (item.children) {
+          func(item.children, level + 1);
+        }
+      });
+    };
+    func(items1);
+    return key;
+  };
+
+  // const getHeaderFromArray = (array: string[]): string => {
+  //   let result = "";
+  //   for (let i = array.length - 1; i > 0; i--) {
+  //     console.log(i);
+  //     console.log(array[i]);
+  //     result += array[i];
+  //   }
+
+  //   return result;
+  // };
+
+  const pathObj = {
+    "77": "/formula",
+  };
+
+  const handlePath = (e: MenuInfo): void => {
+    const selectedKey = e.key as keyof typeof pathObj;
+    const path = pathObj[selectedKey];
+    if (path) {
+      router.push(path);
+    }
+  };
 
   const items: MenuItem[] = [
     {
-      key: "/test",
-      icon: <MailOutlined />,
+      key: "1",
+      icon: <PlusIcon />,
       label: "New Proposal",
     },
     {
       key: "2",
-      icon: <MailOutlined />,
+      icon: <ListIcon />,
       label: "My Proposal",
     },
     {
       key: "3",
-      icon: <AppstoreOutlined />,
+      icon: <GroupIcon />,
       label: "Formula & Ingredient",
       children: [
         {
-          key: "31",
+          key: "66",
           label: "Supplement",
           children: [
             {
-              key: "311",
+              key: "77",
               label: "Formula",
               icon: <DotIcon />,
-              className: "gap-2",
             },
             {
-              key: "312",
+              key: "88",
               label: "All Ingredient",
               icon: <DotIcon />,
-              className: "gap-2",
             },
           ],
         },
@@ -128,7 +142,7 @@ export default function MenuBar() {
     },
     {
       key: "4",
-      icon: <SettingOutlined />,
+      icon: <FileExportIcon />,
       label: "Sale Proposal",
       children: [
         { key: "41", label: "Option 1" },
@@ -141,15 +155,15 @@ export default function MenuBar() {
       key: "5",
       icon: <IconLogout />,
       label: "LogOut",
-      className: "gap-4 h-[48px]",
     },
   ];
 
   const levelKeys = getLevelKeys(items as LevelKeysProps[]);
+
   return (
     <Menu
-      style={{ height: "1000px" ,fontSize : '16px' }}
-      onClick={({key})=>handlePath(key)}
+      style={{ height: "1000px", fontSize: "16px" , backgroundColor : 'white' }}
+      onClick={(e) => handlePath(e)}
       mode="inline"
       // defaultSelectedKeys={["231"]}
       openKeys={stateOpenKeys}

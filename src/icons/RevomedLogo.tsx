@@ -178,8 +178,8 @@ export default function RevomedLogo() {
           y2="39.2637"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1EB8EB" />
-          <stop offset="1" stop-color="#54B280" />
+          <stop stopColor="#1EB8EB" />
+          <stop offset="1" stopColor="#54B280" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_1295_38139"
@@ -189,8 +189,8 @@ export default function RevomedLogo() {
           y2="39.2001"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1EB8EB" />
-          <stop offset="1" stop-color="#54B280" />
+          <stop stopColor="#1EB8EB" />
+          <stop offset="1" stopColor="#54B280" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_1295_38139"
@@ -200,8 +200,8 @@ export default function RevomedLogo() {
           y2="39.2512"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1EB8EB" />
-          <stop offset="1" stop-color="#54B280" />
+          <stop stopColor="#1EB8EB" />
+          <stop offset="1" stopColor="#54B280" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_1295_38139"
@@ -211,8 +211,8 @@ export default function RevomedLogo() {
           y2="39.3868"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1EB8EB" />
-          <stop offset="1" stop-color="#54B280" />
+          <stop stopColor="#1EB8EB" />
+          <stop offset="1" stopColor="#54B280" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_1295_38139"
@@ -222,8 +222,8 @@ export default function RevomedLogo() {
           y2="39.3711"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1EB8EB" />
-          <stop offset="1" stop-color="#54B280" />
+          <stop stopColor="#1EB8EB" />
+          <stop offset="1" stopColor="#54B280" />
         </linearGradient>
         <linearGradient
           id="paint5_linear_1295_38139"
@@ -233,8 +233,8 @@ export default function RevomedLogo() {
           y2="39.4347"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1EB8EB" />
-          <stop offset="1" stop-color="#54B280" />
+          <stop stopColor="#1EB8EB" />
+          <stop offset="1" stopColor="#54B280" />
         </linearGradient>
         <linearGradient
           id="paint6_linear_1295_38139"
@@ -244,8 +244,8 @@ export default function RevomedLogo() {
           y2="39.3835"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1EB8EB" />
-          <stop offset="1" stop-color="#54B280" />
+          <stop stopColor="#1EB8EB" />
+          <stop offset="1" stopColor="#54B280" />
         </linearGradient>
         <linearGradient
           id="paint7_linear_1295_38139"
@@ -255,8 +255,8 @@ export default function RevomedLogo() {
           y2="39.2485"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1EB8EB" />
-          <stop offset="1" stop-color="#54B280" />
+          <stop stopColor="#1EB8EB" />
+          <stop offset="1" stopColor="#54B280" />
         </linearGradient>
         <linearGradient
           id="paint8_linear_1295_38139"
@@ -266,8 +266,8 @@ export default function RevomedLogo() {
           y2="39.3166"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1EB8EB" />
-          <stop offset="1" stop-color="#54B280" />
+          <stop stopColor="#1EB8EB" />
+          <stop offset="1" stopColor="#54B280" />
         </linearGradient>
       </defs>
     </svg>

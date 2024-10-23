@@ -25,6 +25,7 @@
       "@functions/*": ["./src/functions/*"],
       "@contexts/*": ["./src/contexts/*"],
       "@icons/*": ["./src/icons/*"],
+      "@modules/*": ["./src/modules/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
