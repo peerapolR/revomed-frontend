@@ -25,9 +25,11 @@ export default function FormulaList(): React.ReactElement {
           </BaseButton>
         </div>
       </div>
-      <FormSearch />
-      {/* Formula Container */}
-      <FormulaContainer />
+      <div className="flex flex-col gap-1">
+        <FormSearch />
+        {/* Formula Container */}
+        <FormulaContainer />
+      </div>
     </div>
   );
 }

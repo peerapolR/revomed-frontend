@@ -46,7 +46,7 @@ export default function Tabs() {
   };
 
   return (
-    <div className="grid grid-cols-4 px-6 py-4">
+    <div className="grid grid-cols-4 px-6 py-4 rounded-t-2xl bg-revomed-light-grey3">
       {tabItem.map((e) => {
         return (
           <TabPanel

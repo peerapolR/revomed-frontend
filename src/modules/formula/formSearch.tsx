@@ -102,11 +102,11 @@ export default function FormSearch() {
   ];
 
   return (
-    <div>
+    <div className="flex flex-col gap-1">
       {/* Tabs Container */}
       <Tabs />
-      {/* SearchContainer */}
-      <Form className="px-6 py-6 grid grid-cols-5 items-end" layout="inline">
+      {/* Search Container */}
+      <Form className="px-6 py-6 grid grid-cols-5 items-end bg-revomed-light-grey3" layout="inline">
         <Form.Item name="formulaNameLike" label="Search" layout="vertical">
           <Input placeholder="Search Formulation" prefix={<SearchOutlined />} />
         </Form.Item>
@@ -123,7 +123,6 @@ export default function FormSearch() {
           Apply
         </BaseButton>
       </Form>
-      
     </div>
   );
 }
