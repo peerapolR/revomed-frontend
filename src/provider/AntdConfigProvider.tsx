@@ -10,12 +10,12 @@ export default function AntdConfigProvider({
     <ConfigProvider
       theme={{
         token: {
-          colorBgBase : '#F3F5FB',
-          colorPrimary: "#DC818D",
-          colorFillSecondary: "#fff",
+          // colorFillSecondary: "#fff",
         },
         components: {
           Menu: {
+            colorBgBase: "#F3F5FB",
+            colorPrimary: "#DC818D",
             iconMarginInlineEnd: 16,
             activeBarBorderWidth: 0,
             itemColor: "#6F7489",
@@ -24,14 +24,20 @@ export default function AntdConfigProvider({
             itemSelectedColor: "#DC818D",
             itemSelectedBg: "#FCE5E7",
           },
-          Button : {
-            defaultHoverBg : "#FDAEB8",
-            defaultHoverColor : "#fff"
+          Button: {
+            defaultHoverBg: "#FDAEB8",
+            defaultHoverColor: "#fff",
           },
-          Tabs : {
-            cardBg : "#dedede",
+          Tabs: {
+            cardBg: "#dedede",
           },
-          
+          Input: {
+            colorBgBase: "#E0E3EB",
+            colorBorder: "#E0E3EB",
+            hoverBorderColor: "#E0E3EB",
+            activeBorderColor: "#E0E3EB",
+            // activeShadow: "none",
+          },
         },
       }}
     >
