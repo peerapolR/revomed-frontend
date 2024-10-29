@@ -95,7 +95,7 @@ export default function FormulaContainer() {
           }}
         />
       </div>
-      <div className="flex justify-between px-6">
+      <div className="flex justify-between px-6 py-[29.5px]">
         <div className="text-[#14142A]">Total 90 items</div>
         <BasePagination
           total={90}
